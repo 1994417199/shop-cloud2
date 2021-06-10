@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>用户未激活，请<a href="#" onclick="sendActiveMail()">发送邮件</a>后激活后再登录</h1>
+
+
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/jquery.cookie.min.js"></script>
+<script src="../js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/shop/js/pages/index.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/jquery.cookie.min.js"></script>
+
+<script>
+    function sendActiveMail() {
+        var v_memberData=$.cookie("memberData");
+        console.log(v_memberData);
+        var v_param=eval('('+v_memberData+')');
+        console.log(v_param);
+
+        $.ajax({
+            url:server_url+"/member/sendActiveMail",
+            type:"post",
+            data:v_param,
+            success:function (res) {
+                if(res.code==200){
+                    $.removeCookie("memberData");
+                    location.href="success.html";
+                }else {
+                    alert(res.msg);
+                }
+            }
+        })
+
+    }
+</script>
+</body>
+    
+</html>

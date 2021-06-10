@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>订单页面</title>
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../js/shop/css/webbase.css" />
+    <link rel="stylesheet" type="text/css" href="../js/shop/css/pages-getOrderInfo.css" />
+    <!-- Bootstrap -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../js/DataTables/DataTables-1.10.20/css/dataTables.bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<table class="table table-bordered" id="brandTable2">
+    <thead>
+    <tr>
+        <th>订单编号</th>
+        <th>当前会员</th>
+        <th>订单总价格</th>
+        <th>商品总数量</th>
+        <th>订单状态</th>
+        <th>订单创建时间</th>
+        <th>订单收件人</th>
+        <th>地址</th>
+        <th>电话</th>
+        <th>支付方式</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="../js/jquery-3.3.1.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="../js/bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/DataTables/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="../js/DataTables/DataTables-1.10.20/js/dataTables.bootstrap.min.js"></script>
+<script src="../js/jquery.cookie.min.js"></script>
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/jquery.cookie.min.js"></script>
+<script>
+    $(function () {
+        initTable();
+    })
+
+    function initTable() {
+        $.ajax({
+            url: server_url+"/orders/findOrder",
+            type: "get",
+            beforeSend:function(xhr){
+                var v_token=$.cookie("token");
+                xhr.setRequestHeader("x-auth",v_token);
+            },
+            success:function (result) {
+                if(result.code==200){
+                    console.log(result.data);
+                    var v_orderList=result.data;
+                    var v_html="";
+
+                    for (var v_order of v_orderList) {
+                        var v_status=v_order.status;
+                        var v_statusText="";
+                        if(v_status == 0){
+                            v_statusText="未支付";
+                        }else if(v_status == 10){
+                            v_statusText="已支付";
+                        }
+                        else if(v_status == 40){
+                            v_statusText="交易关闭";
+                        }
+                        var  v_payType="";
+                        if(v_order.payType==1){
+                            v_payType='微信支付';
+                        }
+                        v_html+='<tr>';
+                        v_html+='<td>'+v_order.id+'</td>';
+                        v_html+='<td>'+v_order.memberName+'</td>';
+                        v_html+='<td style="color: red">￥'+v_order.totalPrice+'</td>';
+                        v_html+='<td>'+v_order.totalCount+'</td>';
+                        v_html+='<td>'+v_statusText+'</td>';
+                        v_html+='<td>'+v_order.createTime+'</td>';
+                        v_html+='<td>'+v_order.recipientName+'</td>';
+                        v_html+='<td>'+v_order.recipientAddr+'</td>';
+                        v_html+='<td>'+v_order.recipientPhone+'</td>';
+                        v_html+='<td>'+v_payType+'</td>';
+                        v_html+='<td><a href="#" onclick="cancelOrder(\''+v_order.id+'\')">取消订单</a>/<a href="#" onclick="pay(\''+v_order.id+'\')">支付</a></td>';
+                        v_html+='</tr>';
+
+                    }
+                    $('#brandTable2 tbody').html(v_html);
+                }
+            }
+        })
+    }
+
+    function pay(id) {
+        $.ajax({
+            url:server_url+"/pay/aliPay/",
+            type:"post",
+            data:{
+                "orderId":id
+            },
+            beforeSend:function(xhr){
+                var v_token=$.cookie("token");
+                xhr.setRequestHeader("x-auth",v_token);
+            },
+            success:function (result) {
+                console.log(result.data);
+                var totalCount = result.data.split("totalCount:")[1];
+                var count = totalCount.split("id:")[0];
+                console.log(count);
+                $.cookie("totalCount",count);
+                var id = result.data.split("id:")[1];
+                $.cookie("id",id);
+                if(result.code==200){
+                    $("body").html(result.data);
+                    var s = $("[class=' amount-font-22 ']").val();
+
+                    console.log(s);
+                }
+            }
+        })
+    }
+
+    function cancelOrder(id) {
+        $.ajax({
+            url:server_url+"/orders/cancelOrder/"+id,
+            type:"post",
+            beforeSend:function(xhr){
+                var v_token=$.cookie("token");
+                xhr.setRequestHeader("x-auth",v_token);
+            },
+            success:function (result) {
+                if(result.code==200){
+                    initTable();
+                }
+            }
+        })
+    }
+
+    // var v_brandTable;
+    // function initTable() {
+    //     v_brandTable = $('#brandTable').DataTable({
+    //         "language": {
+    //             "url": "../js/DataTables/Chinese.json" // 汉化
+    //         },
+    //         // 是否允许检索
+    //         "searching": false,
+    //         "processing": true,
+    //         "lengthMenu": [5,10,15,20],
+    //         "serverSide": true,
+    //         "ajax": {
+    //             "url": server_url+"/orders/findOrder",
+    //             "type": "get",
+    //             "beforeSend":function(xhr){
+    //                 var v_token=$.cookie("token");
+    //                 xhr.setRequestHeader("x-auth",v_token);
+    //             }
+    //         },
+    //         "columns": [
+    //             {  "data": "id"},
+    //             { "data": "totalPrice" },
+    //             { "data": "totalCount" },
+    //             { "data": "status",
+    //                 "render": function (data, type, row, meta) {
+    //                     if (data != null)
+    //                         return data.toString().replace("0", "待支付").replace("2", "待发货");
+    //                     else
+    //                         return "";
+    //                 }
+    //             },
+    //             { "data": "createTime",
+    //                 "render": function (data, type, row, meta) {
+    //                     return '<img src="'+data+'" width="50px" height="50px"/>';
+    //                 }
+    //             },
+    //
+    //             {"data": "recipientName",},
+    //             { "data": "recipientAddr" },
+    //             { "data": "recipientPhone" },
+    //             { "data": "payType",
+    //                 "render": function (data, type, row, meta) {
+    //                     if (data != null)
+    //                         return data.toString().replace("1", "微信支付").replace("2", "支付宝支付");
+    //                     else
+    //                         return "";
+    //                 }
+    //             },
+    //
+    //             { "data": "memberName",
+    //             }
+    //         ]
+    //     });
+    // }
+
+
+</script>
+</body>
+</html>
