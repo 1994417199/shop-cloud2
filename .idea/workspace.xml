@@ -529,7 +529,17 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CateController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/shop-cate-api/src/main/java/com/fh/shop/api/cate/controller/CateController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -607,7 +617,6 @@
         <option value="$PROJECT_DIR$/shop-portal-cloud/html/index.html" />
         <option value="$PROJECT_DIR$/shop-api-feign-service/src/main/java/com/fh/shop/api/goods/IGoodsFeignService.java" />
         <option value="$PROJECT_DIR$/shop-cart-api/src/main/java/com/fh/shop/api/cart/biz/ICartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/shop-cate-api/src/main/java/com/fh/shop/api/cate/controller/CateController.java" />
         <option value="$PROJECT_DIR$/shop-cate-api/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/shop-gateway/src/main/java/com/fh/shop/api/ShopGateway.java" />
         <option value="$PROJECT_DIR$/shop-reg-center/src/main/resources/application.yml" />
@@ -620,6 +629,7 @@
         <option value="$PROJECT_DIR$/shop-gateway/src/main/java/com/fh/shop/api/config/DocumentationConfig.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/shop-reg-center2/.gitignore" />
+        <option value="$PROJECT_DIR$/shop-cate-api/src/main/java/com/fh/shop/api/cate/controller/CateController.java" />
       </list>
     </option>
   </component>
@@ -674,37 +684,58 @@
             <path>
               <item name="shop-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="shop-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="shop-api-feign-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop-cloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="shop-api-model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop-cloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="shop-cart-api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop-cloud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop-cloud" type="462c0819:PsiDirectoryNode" />
               <item name="shop-cate-api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shop-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="shop-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="shop-goods-api" type="462c0819:PsiDirectoryNode" />
+              <item name="shop-cate-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shop-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="shop-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="shop-member-api" type="462c0819:PsiDirectoryNode" />
+              <item name="shop-cate-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shop-cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="shop-cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="shop-portal-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="shop-cate-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shop-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="shop-cate-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shop-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="shop-cate-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="cate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shop-cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shop-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="shop-cate-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="cate" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -887,15 +918,16 @@
       <workItem from="1623224315548" duration="304000" />
       <workItem from="1623224669280" duration="13017000" />
       <workItem from="1623240070091" duration="4537000" />
-      <workItem from="1623281534946" duration="6056000" />
+      <workItem from="1623281534946" duration="6782000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73870000" />
+    <option name="totallyTimeSpent" value="74596000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -917,8 +949,8 @@
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Spring" order="11" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.5948645" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30965146" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.19543509" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30965146" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -1186,13 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shop-cate-api/src/main/java/com/fh/shop/api/cate/controller/CateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shop-gateway/src/main/java/com/fh/shop/api/config/FilterConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1298,6 +1323,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shop-cate-api/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop-cate-api/src/main/java/com/fh/shop/api/cate/controller/CateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

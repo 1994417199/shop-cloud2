@@ -32,6 +32,7 @@ public class CateController {
     @ResponseBody
     public ServerResponse findAllList(){
         log.info("端口号",port);
+        System.out.println("git 上传测试");
         return cateService.findAllList();
     }
 
