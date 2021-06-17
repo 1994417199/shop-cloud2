@@ -7,9 +7,10 @@
     <file url="file://$PROJECT_DIR$/shop-cart-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-cate-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-gateway/src/main/java/com/fh/shop/api/ShopGateway.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-goods-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-member-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-reg-center" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shop-reg-center2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-test" charset="UTF-8" />
   </component>
 </project>

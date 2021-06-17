@@ -11,7 +11,7 @@
       <module>shop-cart-api</module>
       <module>shop-api-model</module>
       <module>shop-api-feign-service</module>
-      <module>shop-reg-center2</module>
+      <module>shop-test</module>
   </modules>
 
   <parent>

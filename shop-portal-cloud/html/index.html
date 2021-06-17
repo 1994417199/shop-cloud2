@@ -278,7 +278,7 @@
     var v_cateList="";
     function initCate() {
         $.ajax({
-            url:server_url2+"/cate/findList",
+            url:"http://localhost:9000/shop-cate-api/api/cate/findList",
             type:"get",
             beforeSend:function(xhr){
               var v_token=$.cookie("token");

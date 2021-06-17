@@ -13,12 +13,15 @@
         <module name="shop-gateway" />
         <module name="shop-goods-api" />
         <module name="shop-member-api" />
-        <module name="shop-reg-center2" />
+        <module name="shop-test" />
         <module name="shopregcenter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="consul-ribbon-service" target="1.8" />
+      <module name="consul-user-service" target="1.7" />
       <module name="shop-geteway" target="1.7" />
+      <module name="shop-reg-center2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

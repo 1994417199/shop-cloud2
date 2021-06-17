@@ -10,9 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.fh.shop.api</groupId>
-    <artifactId>shop-reg-center2</artifactId>
+    <artifactId>shop-test</artifactId>
 
-    <name>shop-reg-center2</name>
+    <name>shop-test</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -21,10 +21,7 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
+
     </dependencies>
 
     <build>

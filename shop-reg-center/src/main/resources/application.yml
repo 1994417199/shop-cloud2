@@ -1,23 +1,64 @@
+---
+eureka:
+      instance:
+        hostname: p1 #指定主机地址
+      client:
+        fetch-registry: true #指定是否要从注册中心获取服务（注册中心不需要开启）
+        register-with-eureka: true #指定是否要注册到注册中心（注册中心不需要开启）
+        serviceUrl:
+          defaultZone: http://p2:8111/eureka/,http://p3:8222/eureka/,http://p1:8000/eureka/ #注册到另一个Eureka注册中心
 server:
   port: 8000
 spring:
+  profiles: reg1
   application:
-    name: eureka-server
+      name: regCenter
+---
 eureka:
-  instance:
-    hostname: replica1
-  client:
-    serviceUrl:
-      defaultZone: http://replica2:7000/eureka/ #注册到另一个Eureka注册中心
-    fetch-registry: true
-    register-with-eureka: true
+      instance:
+        hostname: p2 #指定主机地址
+      client:
+        fetch-registry: true #指定是否要从注册中心获取服务（注册中心不需要开启）
+        register-with-eureka: true #指定是否要注册到注册中心（注册中心不需要开启）
+        serviceUrl:
+                  defaultZone: http://p1:8000/eureka/,http://p3:8222/eureka/ #注册到另一个Eureka注册中心
+server:
+  port: 8111
+spring:
+  profiles: reg2
+  application:
+      name: regCenter
+---
+eureka:
+      instance:
+        hostname: p3 #指定主机地址
+      client:
+        fetch-registry: true #指定是否要从注册中心获取服务（注册中心不需要开启）
+        register-with-eureka: true #指定是否要注册到注册中心（注册中心不需要开启）
+        serviceUrl:
+                  defaultZone: http://p1:8000/eureka/,http://p2:8111/eureka/ #注册到另一个Eureka注册中心
+server:
+  port: 8222
+spring:
+  profiles: reg3
+  application:
+    name: regCenter
 
 
-#    eureka:
-#      instance:
-#        hostname: localhost #指定主机地址
-#      client:
-#        fetch-registry: false #指定是否要从注册中心获取服务（注册中心不需要开启）
-#        register-with-eureka: false #指定是否要注册到注册中心（注册中心不需要开启）
-#    server:
-#      port: 8000
+
+
+#server:
+#  port: 8000
+#spring:
+#  application:
+#    name: eureka-server
+#eureka:
+#  instance:
+#    hostname: replica1
+#  client:
+#    serviceUrl:
+#      defaultZone: http://replica2:7000/eureka/ #注册到另一个Eureka注册中心
+#    fetch-registry: true
+#    register-with-eureka: true
+
+
